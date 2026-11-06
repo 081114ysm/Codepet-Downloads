@@ -25,11 +25,16 @@
 
 ## 설치 방법
 
-1. [Releases](https://github.com/081114ysm/Codepet-Downloads/releases/latest)에서 `Codepet-1.1.0-mac-arm64.dmg`를 다운로드합니다.
+1. [Releases](https://github.com/081114ysm/Codepet-Downloads/releases/latest)에서 `Codepet-1.1.1-mac-arm64.dmg`를 다운로드합니다.
 2. DMG를 열고 Codepet을 `응용 프로그램` 폴더로 옮깁니다.
-3. Codepet을 실행합니다.
+3. 터미널을 열고 아래 명령을 한 번 실행합니다.
 
-현재 학교 프로젝트 빌드는 Apple Developer ID 코드 서명과 공증을 하지 않았습니다. macOS에서 개발자를 확인할 수 없다는 경고가 나타나면 앱을 한 번 실행한 다음 `시스템 설정 → 개인정보 보호 및 보안 → 확인 없이 열기`를 선택해야 합니다. 출처를 신뢰할 수 있을 때만 실행하세요.
+```sh
+xattr -dr com.apple.quarantine /Applications/Codepet.app
+open /Applications/Codepet.app
+```
+
+현재 학교 프로젝트 빌드는 중첩 바이너리까지 애드혹 서명했지만 Apple Developer ID 서명과 공증은 하지 않았습니다. 위 명령은 Codepet 앱에만 다운로드 격리 속성을 제거합니다. 출처와 아래 체크섬을 확인한 파일에서만 실행하세요. macOS 전체 Gatekeeper를 끄는 명령은 사용하지 마세요.
 
 [Apple의 미공증 앱 실행 안내](https://support.apple.com/ko-kr/102445)
 
@@ -43,13 +48,13 @@
 
 ![Codepet 원숭이 펫](assets/codepet-pet.png)
 
-## Codepet 1.1.0 체크섬
+## Codepet 1.1.1 체크섬
 
 다운로드한 파일이 바뀌지 않았는지 확인할 때 사용합니다.
 
 ```text
-DMG  187a44c6ebb920170cc4ef4b2e16acec779f0ffd3ed562cab02d34d348bb526e
-ZIP  d00f857c099cdffc95b7e9ef9db9485dbca9bbb11874219d24064943e7b5edd6
+DMG  a367f67292ca21aaf590bbba19239e18bb3b1c4f54cd56956e433addb37f06dd
+ZIP  51280645a361f2298447c9cc92af3d3ac02eb9fe9cc46a6bd610ab4ae6634a21
 ```
 
 ## 개인정보
